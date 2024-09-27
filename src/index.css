@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes appear {
+    from {
+        transform: translateX(4rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /*body {*/
 /*    background-color: #0d0b19ff*/
 /*}*/
+
+#visual {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+
+}
+
+.glass {
+    display: flex;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+.appear {
+    animation: appear 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}

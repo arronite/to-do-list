@@ -1,11 +1,27 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../sections/Home";  // Ensure Home is a valid React component
+import Home from "../sections/Home";
+import Hero from "../components/HomeComponents/Hero";
+import Login from "../components/HomeComponents/Login";
+interface Routes {
+    path: string,
+    element: React.ReactNode,
+    children?: Routes[]
+}
 
-const routes = [
+const routes: Routes[] = [
     {
         path: "/",
-        element: <Home />
+        element: <Home />,
+        children: [{
+            path: "/",
+            element: <Hero />
+        },
+        {
+            path: "/login",
+            element: <Login />
+
+        }]
     },
 ];
 
